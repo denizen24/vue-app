@@ -1,4 +1,4 @@
-# vue-app
+# vue-app + Firebase / the project is not finished yet 
 
 ## Project setup
 ```
