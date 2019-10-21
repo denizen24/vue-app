@@ -20,7 +20,7 @@ new Vue({
       authDomain: 'ads-project-7341d.firebaseapp.com',
       databaseURL: 'https://ads-project-7341d.firebaseio.com',
       projectId: 'ads-project-7341d',
-      storageBucket: '',
+      storageBucket: 'ads-project-7341d.appspot.com',
       messagingSenderId: '509530952600',
       appId: '1:509530952600:web:c31193206232052de751ed'
     })
@@ -30,6 +30,7 @@ new Vue({
         this.$store.dispatch('autoLoginUser', user)
       }
     })
+    this.$store.dispatch('fetchAds')
   },
   render: h => h(App)
 }).$mount('#app')
