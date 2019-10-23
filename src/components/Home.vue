@@ -3,9 +3,8 @@
     <v-container fluid>
       <v-layout row>
         <v-flex xs12>
-          <v-carousel>
+          <v-carousel height="auto">
             <v-carousel-item
-              width="900"
               v-for="ad in promoAds"
               :key="ad.id"
               :src="ad.imageSrc"
@@ -32,7 +31,7 @@
             max-width="350"
           >
             <v-img
-              class="white--text"
+              class="red--text"
               height="200px"
               :src="ad.imageSrc"
             >
@@ -40,7 +39,7 @@
             </v-img>
 
             <v-card-text>
-        <span>SELL</span><br>
+        <span>TTX</span><br>
         <span>{{ad.description}}</span>
             </v-card-text>
             <v-card-actions>
@@ -105,5 +104,4 @@ export default {
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
   }
-
 </style>

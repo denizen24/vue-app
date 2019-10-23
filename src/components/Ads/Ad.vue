@@ -13,7 +13,7 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn class="error">Edit</v-btn>
+            <edit-ad-modal></edit-ad-modal>
             <v-btn class="theme--dark">Buy</v-btn>
           </v-card-actions>
         </v-card>
@@ -23,7 +23,12 @@
 </template>
 
 <script>
+import EditAdModal from './EditAdModal'
+
 export default {
+  components: {
+    'edit-ad-modal': EditAdModal
+  },
   props: ['id'],
   computed: {
     ad () {
@@ -36,4 +41,3 @@ export default {
 
 <style scoped>
 </style>
-
