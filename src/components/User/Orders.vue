@@ -40,29 +40,28 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        orders: [
-          {
-            id: 'ads123',
-            name: 'vlad',
-            phone: '89129692288',
-            adId: '123',
-            done: false
-          }
-        ]
-      }
-    },
-    methods: {
-      markDone (order) {
-        order.done = true
-      }
+export default {
+  data () {
+    return {
+      orders: [
+        {
+          id: 'ads123',
+          name: 'vlad',
+          phone: '89129692288',
+          adId: '123',
+          done: false
+        }
+      ]
+    }
+  },
+  methods: {
+    markDone (order) {
+      order.done = true
     }
   }
+}
 </script>
 
 <style scoped>
 
 </style>
-

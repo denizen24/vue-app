@@ -2,7 +2,7 @@
   <v-container>
     <v-layout row>
       <v-flex xs12>
-        <v-card>
+        <v-card v-if="!loading">
           <v-img
             :src="ad.imageSrc"
             contain
@@ -17,6 +17,14 @@
             <v-btn class="theme--dark">Buy</v-btn>
           </v-card-actions>
         </v-card>
+        <div v-else class="text-xs-center d-flex justify-center pt-5">
+          <v-progress-circular
+            :size="100"
+            :width="4"
+            color="purple"
+            indeterminate
+          ></v-progress-circular>
+        </div>
       </v-flex>
     </v-layout>
   </v-container>
@@ -34,6 +42,9 @@ export default {
     ad () {
       const id = this.id
       return this.$store.getters.adById(id)
+    },
+    loading () {
+      return this.$store.getters.loading
     }
   }
 }

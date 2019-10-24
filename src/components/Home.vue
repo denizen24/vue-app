@@ -31,7 +31,7 @@
             max-width="350"
           >
             <v-img
-              class="red--text"
+              class="braun--text"
               height="200px"
               :src="ad.imageSrc"
             >

@@ -73,7 +73,7 @@ export default {
   }),
   computed: {
     error () {
-      return  this.$store.getters.error
+      return this.$store.getters.error
     },
     isUserLoggedIn () {
       return this.$store.getters.isUserLoggedIn
@@ -81,14 +81,14 @@ export default {
     links () {
       if (this.isUserLoggedIn) {
         return [
-          {title: 'Orders', icon: 'bookmark_border', url: '/orders'},
-          {title: 'New ad', icon: 'fiber_new', url: '/new'},
-          {title: 'My ads', icon: 'list', url: '/list'}
+          { title: 'Orders', icon: 'bookmark_border', url: '/orders' },
+          { title: 'New ad', icon: 'fiber_new', url: '/new' },
+          { title: 'My ads', icon: 'list', url: '/list' }
         ]
       }
       return [
-        {title: 'Login', icon: 'lock', url: '/login'},
-        {title: 'Registration', icon: 'face', url: '/registration'}
+        { title: 'Login', icon: 'lock', url: '/login' },
+        { title: 'Registration', icon: 'face', url: '/registration' }
       ]
     }
   },

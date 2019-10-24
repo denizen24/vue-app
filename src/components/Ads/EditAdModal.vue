@@ -3,6 +3,7 @@
     <!-- <v-btn class="error" slot="activator" >Edit</v-btn> -->
     <template v-slot:activator="{ on }">
         <v-btn
+          :loading="loading"
           color="red lighten-2"
           dark
           v-on="on"
@@ -29,13 +30,13 @@
                 type="text"
                 v-model="editedTitle"
               ></v-text-field>
-              <v-text-field
+              <v-textarea
                 name="description"
                 label="Description"
                 type="text"
-                multi-line
+                aria-multiselectable="true"
                 v-model="editedDescription"
-              ></v-text-field>
+              ></v-textarea>
             </v-card-text>
           </v-flex>
         </v-layout>
@@ -44,8 +45,8 @@
           <v-flex xs12>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn flat @click="onCancel">Cancel</v-btn>
-              <v-btn class="success" flat @click="onSave">Save</v-btn>
+              <v-btn @click="dialog = false">Cancel</v-btn>
+              <v-btn class="success" @click="onSave">Save</v-btn>
             </v-card-actions>
           </v-flex>
         </v-layout>
@@ -57,18 +58,23 @@
 <script>
 export default {
   props: ['ad'],
-  data () {
+  data: function () {
     return {
       dialog: false,
       editedDescription: this.ad.description,
       editedTitle: this.ad.title
     }
   },
+  computed: {
+    loading () {
+      return this.$store.getters.loading
+    }
+  },
   methods: {
-    onCancel () {
+    onCancel: function () {
+      this.dialog = 'false'
       this.editedDescription = this.ad.description
       this.editedTitle = this.ad.title
-      this.modal = false
     },
     onSave () {
       if (this.editedDescription !== '' && this.editedTitle !== '') {
@@ -78,7 +84,7 @@ export default {
           id: this.ad.id
         })
 
-        this.modal = false
+        this.dialog = false
       }
     }
   }

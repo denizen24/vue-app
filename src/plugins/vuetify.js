@@ -1,9 +1,9 @@
-import Vue from 'vue';
-import Vuetify from 'vuetify';
-import 'vuetify/dist/vuetify.min.css';
-import ru from 'vuetify/es5/locale/ru';
+import Vue from 'vue'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+import ru from 'vuetify/es5/locale/ru'
 
-Vue.use(Vuetify);
+Vue.use(Vuetify)
 
 export default new Vuetify({
   theme: {
@@ -16,14 +16,14 @@ export default new Vuetify({
         info: '#2196F3',
         success: '#4CAF50',
         warning: '#FFC107'
-      },
-    },
+      }
+    }
   },
-    lang: {
-      locales: { ru },
-      current: 'ru',
-    },
+  lang: {
+    locales: { ru },
+    current: 'ru'
+  },
   icons: {
-    iconfont: 'mdi',
-  },
-});
+    iconfont: 'mdi'
+  }
+})
